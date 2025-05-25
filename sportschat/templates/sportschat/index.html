@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sports Q&A</title>
+  </head>
+  <body>
+    <h1>Ask a sports question</h1>
+    <form method="post">
+      {% csrf_token %}
+      <input
+        type="text"
+        name="question"
+        placeholder="e.g.Score of Barcelona tonight"
+      />
+      <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+    <h2>Response:</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+  </body>
+</html>
