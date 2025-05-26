@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Sports Q&A</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #1e3c72, #2a5298);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      input[type="text"] {
+        padding: 10px 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        width: 300px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #ffce00;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #000;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #e6b800;
+      }
+
+      h2 {
+        margin-top: 30px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 15px 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>Ask a sports question</h1>
+    <h1>Ask a Sports Question</h1>
     <form method="post">
       {% csrf_token %}
       <input
         type="text"
         name="question"
-        placeholder="e.g.Score of Barcelona tonight"
+        placeholder="e.g. Score of Barcelona tonight"
       />
       <button type="submit">Ask</button>
     </form>
